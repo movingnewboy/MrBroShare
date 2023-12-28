@@ -23,7 +23,7 @@ class Config(object):
 	DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://leecher:leecher@cluster0.606mkpi.mongodb.net/?retryWrites=true&w=majority")
 	UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
 	
-	LOG_CHANNEL = "-1001624572720".  #ShareMoviesQLBot
+	LOG_CHANNEL = "-1001624572720" #ShareMoviesQLBot
 	#LOG_CHANNEL = "-1002087036746"  #QL_Movie_Links_Bot
 	#LOG_CHANNEL = "-1001884285982"  #Tamilan_Rocks1_Bot
 	
