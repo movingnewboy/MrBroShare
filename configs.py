@@ -8,7 +8,8 @@ class Config(object):
 	API_HASH = "fcdc178451cd234e63faefd38895c991"
 
 	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6885403506:AAEC0alu3bCjcCgzIMGqk6rG7540vmCkqP0")
-        BOT_USERNAME = os.environ.get("BOT_USERNAME", "AdultOnly18_Bot")
+        #BOT_USERNAME = os.environ.get("BOT_USERNAME", "AdultOnly18_Bot")
+	BOT_USERNAME = "AdultOnly18_Bot"
         LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002107895168"))
         UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1002138948839")
 	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1002107895168")) #Adult
