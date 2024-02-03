@@ -76,12 +76,11 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/Quality_LinksZ"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Quality_LinksZ")
+                        InlineKeyboardButton("🎬 Main Channel", url="https://telegram.me/Adult_Only_TG")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("✅ Support Group", url="https://telegram.me/Adult_Only_TG"),
+                        InlineKeyboardButton("🍿 Other Channel", url="https://telegram.me/Adult_Only_TG")
                     ]
                 ]
             )
@@ -122,7 +121,7 @@ async def main(bot: Client, message: Message):
                 return
 
         if message.from_user.id in Config.BANNED_USERS:
-            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://t.me/AsuranMoviefinder)",
+            await message.reply_text("Sorry, You are banned!\n\nContact [Support Group](https://telegram.me/Adult_Only_TG)",
                                      disable_web_page_preview=True)
             return
 
@@ -317,7 +316,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton("Source Codes of Bot",
-                                             url="https://github.com/JAsuran/PyroFilesStoreBot")
+                                             url="https://telegram.me/Adult_Only_TG")
                     ],
                     [
                         InlineKeyboardButton("Go Home", callback_data="gotohome"),
@@ -335,7 +334,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 [
                     [
                         InlineKeyboardButton("Source Codes of Bot",
-                                             url="https://t.me/Quality_LinksZ")
+                                             url="https://telegram.me/Adult_Only_TG")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
@@ -352,12 +351,11 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/Quality_LinksZ"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Quality_LinksZ")
+                        InlineKeyboardButton("🎬 Main Channel", url="https://telegram.me/Adult_Only_TG")
                     ],
                     [
-                        InlineKeyboardButton("About Bot", callback_data="aboutbot"),
-                        InlineKeyboardButton("About Dev", callback_data="aboutdevs")
+                        InlineKeyboardButton("✅ Support Group", url="https://telegram.me/Adult_Only_TG"),
+                        InlineKeyboardButton("🍿 Other Channel", url="https://telegram.me/Adult_Only_TG")
                     ]
                 ]
             )
@@ -373,7 +371,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 user = await bot.get_chat_member(channel_chat_id, cmd.message.chat.id)
                 if user.status == "kicked":
                     await cmd.message.edit(
-                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/Quality_LinksZ).",
+                        text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://telegram.me/Adult_Only_TG).",
                         disable_web_page_preview=True
                     )
                     return
@@ -396,7 +394,7 @@ async def button(bot: Client, cmd: CallbackQuery):
                 return
             except Exception:
                 await cmd.message.edit(
-                    text="Something went Wrong. Contact my [Support Group](https://t.me/Quality_LinksZ).",
+                    text="Something went Wrong. Contact my [Support Group](https://telegram.me/Adult_Only_TG).",
                     disable_web_page_preview=True
                 )
                 return
@@ -406,8 +404,8 @@ async def button(bot: Client, cmd: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Support Group", url="https://t.me/Quality_LinksZ"),
-                        InlineKeyboardButton("Bots Channel", url="https://t.me/Quality_LinksZ")
+                        InlineKeyboardButton("Support Group", url="https://telegram.me/Adult_Only_TG"),
+                        InlineKeyboardButton("Bots Channel", url="https://telegram.me/Adult_Only_TG")
                     ],
                     [
                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
