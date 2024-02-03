@@ -6,16 +6,22 @@ import os
 class Config(object):
 	API_ID = 1923471
 	API_HASH = "fcdc178451cd234e63faefd38895c991"
+
+	BOT_TOKEN = os.environ.get("BOT_TOKEN", "6885403506:AAEC0alu3bCjcCgzIMGqk6rG7540vmCkqP0")
+        BOT_USERNAME = os.environ.get("BOT_USERNAME", "AdultOnly18_Bot")
+        LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002107895168"))
+        UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "-1002138948839")
+	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1002107895168")) #Adult
 	
-	BOT_TOKEN = "6288959553:AAFdAjugCCau_-SluJLU1CQiOwyYjFvWYRU" #ShareMoviesQLBot
+	#BOT_TOKEN = "6288959553:AAFdAjugCCau_-SluJLU1CQiOwyYjFvWYRU" #ShareMoviesQLBot
 	#BOT_TOKEN = "5925688295:AAE3mRUwnJsHdBo5TVTCibHJP--akCRU4jE" #Tamilan_Rocks1_Bot
 	#BOT_TOKEN = "6898447547:AAFj3fAep2W2O69lilL3jv-TNluMJE9EnyI" #QL_Movie_Links_Bot
 	
-	BOT_USERNAME = "ShareMoviesQLBot"
+	#BOT_USERNAME = "ShareMoviesQLBot"
 	#BOT_USERNAME = "Tamilan_Rocks1_Bot"
 	#BOT_USERNAME = "QL_Movie_Links_Bot"
 	
-	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001624572720")) #ShareMoviesQLBot
+	#DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001624572720")) #ShareMoviesQLBot
 	#DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001884285982")) #Tamilan_Rocks1_Bot
 	 #DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1002087036746")) #QL_Movie_Links_Bot
 	
@@ -23,7 +29,7 @@ class Config(object):
 	DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://leecher:leecher@cluster0.606mkpi.mongodb.net/?retryWrites=true&w=majority")
 	UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "")
 	
-	LOG_CHANNEL = "-1001624572720" #ShareMoviesQLBot
+	#LOG_CHANNEL = "-1001624572720" #ShareMoviesQLBot
 	#LOG_CHANNEL = "-1002087036746"  #QL_Movie_Links_Bot
 	#LOG_CHANNEL = "-1001884285982"  #Tamilan_Rocks1_Bot
 	
