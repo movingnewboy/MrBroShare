@@ -67,8 +67,8 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             f"**Link:** {share_link}",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Open Link", url=share_link)],
-                 [InlineKeyboardButton("Bots Channel", url="https://telegram.me/JAsuranBots"),
-                  InlineKeyboardButton("Support Group", url="https://telegram.me/AsuranMoviefinders")]]
+                 [InlineKeyboardButton("Bots Channel", url="https://telegram.me/Adult_Only_TG"),
+                  InlineKeyboardButton("Support Group", url="https://t.me/Adult_Only_TG")]]
             ),
             disable_web_page_preview=True
         )
@@ -113,8 +113,8 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             f"**{caption} - {file_size}\n\nLink:** {share_link}",
             reply_markup=InlineKeyboardMarkup(
                 [[InlineKeyboardButton("Open Link", url=share_link)],
-                 [InlineKeyboardButton("Bots Channel", url="https://telegram.me/JAsuranBots"),
-                  InlineKeyboardButton("Support Group", url="https://telegram.me/AsuranMoviefinders")]]
+                 [InlineKeyboardButton("Bots Channel", url="https://telegram.me/Adult_Only_TG"),
+                  InlineKeyboardButton("Support Group", url="https://telegram.me/Adult_Only_TG")]]
             ),
             disable_web_page_preview=True
         )
