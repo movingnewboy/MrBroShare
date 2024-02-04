@@ -129,7 +129,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(file_er_id)}"
         short_link = get_short(share_link)
         await editable.edit(
-            f"**{caption} - {file_size}**\n\n <code>Video - {short_link}\n\nVideo - {share_link}</code>",
+            f"**{caption} - {file_size}**\n\n <code>Video - {short_link}</code>\n\n<code>Video - {share_link}</code>",
             reply_markup=InlineKeyboardMarkup(
                [[InlineKeyboardButton("Original Link", url=share_link),
                   InlineKeyboardButton("Short Link", url=short_link)]]
