@@ -1,6 +1,9 @@
-# (c) @JAsuran
-
 import asyncio
+
+import requests
+import string
+import random
+
 from configs import Config
 from pyrogram import Client
 from pyrogram.types import (
@@ -24,7 +27,21 @@ def humanbytes(size):
         size /= power
         n += 1
     return str(round(size, 2)) + " " + Dic_powerN[n] + 'B'
-    
+
+def generate_random_alphanumeric():
+    """Generate a random 8-letter alphanumeric string."""
+    characters = string.ascii_letters + string.digits
+    random_chars = ''.join(random.choice(characters) for _ in range(8))
+    return random_chars
+
+def get_short(url):
+    rget = requests.get(f"https://{Config.SHORTLINK_URL}/api?api={Config.SHORTLINK_API}&url={url}&alias={generate_random_alphanumeric()}")
+    rjson = rget.json()
+    if rjson["status"] == "success" or rget.status_code == 200:
+        return rjson["shortenedUrl"]
+    else:
+        return url
+        
 async def forward_to_channel(bot: Client, message: Message, editable: Message):
     try:
         __SENT = await message.forward(Config.DB_CHANNEL)
@@ -62,13 +79,13 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             ]])
         )
         share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(str(SaveMessage.id))}"
-
+        short_link = get_short(share_link)
+        
         await editable.edit(
             f"**Link:** {share_link}",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Open Link", url=share_link)],
-                 [InlineKeyboardButton("Bots Channel", url="https://telegram.me/Adult_Only_TG"),
-                  InlineKeyboardButton("Support Group", url="https://t.me/Adult_Only_TG")]]
+                [[InlineKeyboardButton("Original Link", url=share_link),
+                  InlineKeyboardButton("Short Link", url=short_link)]]
             ),
             disable_web_page_preview=True
         )
@@ -76,7 +93,8 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             chat_id=int(Config.LOG_CHANNEL),
             text=f"#BATCH_SAVE:\n\n[{editable.reply_to_message.from_user.first_name}](tg://user?id={editable.reply_to_message.from_user.id}) Got Batch Link!",
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Open Link", url=share_link)]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Original Link", url=short_link),
+                                                InlineKeyboardButton("Short Link", url=share_link)]])
         )
     except Exception as err:
         await editable.edit(f"Something Went Wrong!\n\n**Error:** `{err}`")
@@ -109,12 +127,12 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         # get caption (if any)
         caption = message.caption if media.file_name else ""
         share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=JAsuran_{str_to_b64(file_er_id)}"
+        short_link = get_short(share_link)
         await editable.edit(
             f"**{caption} - {file_size}**\n\n <code> Video - {share_link}</code>",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Open Link", url=share_link)],
-                 [InlineKeyboardButton("Bots Channel", url="https://telegram.me/Adult_Only_TG"),
-                  InlineKeyboardButton("Support Group", url="https://telegram.me/Adult_Only_TG")]]
+               [[InlineKeyboardButton("Original Link", url=share_link),
+                  InlineKeyboardButton("Short Link", url=short_link)]]
             ),
             disable_web_page_preview=True
         )
