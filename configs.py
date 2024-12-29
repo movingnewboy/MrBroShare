@@ -18,8 +18,8 @@ class Config(object):
 	BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
 	BANNED_CHAT_IDS = list(set(int(x) for x in os.environ.get("BANNED_CHAT_IDS", "-1001362659779 -1001255795497").split()))
 	OTHER_USERS_CAN_SAVE_FILE = bool(os.environ.get("OTHER_USERS_CAN_SAVE_FILE", True))
-	SHORTLINK_URL = os.environ.get('SHORTLINK_URL', "publicearn.com")
-	SHORTLINK_API = os.environ.get('SHORTLINK_API', "9da9e04c687cef048d60fb4ed5dbefa59c388647")
+	SHORTLINK_URL = os.environ.get('SHORTLINK_URL', "seturl.in")
+	SHORTLINK_API = os.environ.get('SHORTLINK_API', "7ac7e29a491f15f0360e0cbe38a24490501c02e0")
 	ABOUT_BOT_TEXT = f"""
 This is Permanent Files Store Bot!
 Send me any file I will save it in my Database. Also works for channel. Add me to channel as Admin with Edit Permission, I will add Save Uploaded File in Channel & add Sharable Button Link.
